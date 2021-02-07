@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chapter04 eventhandler</title>
+		<style type = "text/css">
+		.button {
+		border: black;
+		color: white;
+		padding: 16px 16px;
+		text-align: center;
+		display: inline-block;
+		cursor: pointer;
+		}
+		
+		.buttonGreen{
+		background-color: black;
+		color: white;
+		border: 2px solid black;
+		}
+		.buttonGreen:hover {
+		background-color: green;
+		color: black;
+		}
+		
+		.buttonBlue{
+		background-color: black;
+		color: white;
+		border: 2px solid black;
+		}
+		.buttonBlue:hover{
+		background-color: blue;
+		color: black;
+		}
+		
+		.buttonRed{
+		background-color: black;
+		color: white;
+		border: 2px solid black;
+		}
+		.buttonRed:hover{
+		background-color: red;
+		color: black;
+		}
+			
+		</style>
+	</head>
+	<body>
+		<button class="button buttonGreen" onclick="greenInc()">Green</button>
+		<input type="text" id="green" value="0"></input>
+		<button class="button buttonBlue" onclick="blueInc()">Blue</button>
+		<input type="text" id="blue" value="0"></input>
+		<button class="button buttonRed" onclick="redInc()">Red</button>
+		<input type="text" id="red" value="0"></input>
+		
+		<script>
+			var g = 0;
+			var b = 0;
+			var r = 0;
+			function greenInc(){
+			document.getElementById('green').value = ++g;
+			}
+			function blueInc(){
+			document.getElementById('blue').value = ++b;
+			}
+			function redInc(){
+			document.getElementById('red').value = ++r;
+			}
+		</script>
+		
+	</body>
+</html>
