@@ -1,0 +1,50 @@
+/* set font for entire page */
+html{
+  font-family: Arial;
+}
+/* main header for all pages*/
+.main-header{
+  padding: 16px;
+  text-align: center;
+}
+/* footer with home link for all pages */
+.foot{
+  padding:16px;
+  border: solid 2px black;
+  background-color:gray;
+  margin:10px;
+}
+/* assignment links nav bar */
+.assignment-list{
+  line-height:24px;
+}
+
+/* wireframe visual for content layout */
+.grid-one{
+  grid-area:navList;
+  display:grid;
+  border:solid black 1px;
+  background-color:lightblue;
+}
+.grid-two{
+  grid-area:centerList;
+  display:grid;
+  border:solid black 1px;
+  background-color:lightgray;
+  padding:24px;
+}
+.grid-three{
+  grid-area:rightList;
+  display:grid;
+  border:solid black 1px;
+  background-color:lightgreen;
+  padding:24px;
+}
+.contentMain{
+	display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap:10px;
+  grid-template-areas:
+    "navList centerList centerList"
+    "rightList rightList rightList";
+}
