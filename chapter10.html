@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			//mouse hover to toggle div highlight
+			$(".div-highlight").mouseenter(function() {
+				$(this).css("background-color", "yellow");
+			});
+			$(".div-highlight").mouseleave(function() {
+				$(this).css("background-color", "white");
+			});
+			
+			//div1 fadetoggle button
+			$(".div-button").on("click", function() {
+				var whichPanel = $(this).attr("divid");
+				$("#"+whichPanel).slideToggle(300);
+			});
+			
+			//datepicker widget and accordion selection
+			$("#datepicker").datepicker();
+			$("#accordion-select").accordion({
+				"active":false,
+				"collapsible":true
+			});
+			
+			//20sec timer progressbar
+			var timerValue = 0;
+			var timerMax = 20;
+			$("#progressbar").progressbar({
+				"max":timerMax,
+			});
+			setInterval(function(){
+				if(timerValue <= timerMax){
+				timerValue = timerValue+1;
+				$("#progressbar").progressbar("option", "value", timerValue);
+				}
+				//resets the timer progress after 1 sec
+				else{
+				timerValue=0;
+				$("#progressbar").progressbar("option", "value", timerValue);
+				}
+			}, 1000);
+		});
+	</script>
+</head>
+
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<p>This is a paragraph.</p>
+
+
+
+
+
+<div class="div-highlight" id="div1" style="border: 1px solid black;">
+	<p>A paragraph in a div.</p>
+	<p>Another paragraph in a div.</p>
+</div>
+<button class="div-button" divid="div1" type="button">div1</button>
+<br>
+
+<div class="div-highlight" id="div2" style="border: 1px solid black;">
+	<p>A paragraph in another div.</p>
+	<p>Another paragraph in another div.</p>
+</div>
+<button class="div-button" divid="div2" type="button">div2</button>
+<br>
+
+<div class="div-highlight" id="div3" style="border: 1px solid black;">
+	<p>A paragraph in another div.</p>
+	<p>Another paragraph in another div.</p>
+</div>
+<button class="div-button" divid="div3" type="button">div3</button>
+<br>
+
+<p>Datepicker ex: <input type="text" id="datepicker"></p>
+<br>
+<div id="accordion-select">
+	<h3>Selection1</h3>
+	<div><p>This is the first selection</p></div>
+	<h3>Selection2</h3>
+	<div><p>This is the second selection</p></div>
+	<h3>Selection3</h3>
+	<div><p>This is the third selection</p></div>
+</div>
+<br>
+<div id="progressbar">
+
+</div>
+</body>
+
+<footer class="foot">
+		<a href="/index.html">Index</a>
+	</footer>
+</html>
